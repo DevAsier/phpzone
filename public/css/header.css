@@ -1,0 +1,34 @@
+/* === Menú de usuario (perfil + nombre) === */
+.user-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px; /* más espacio entre nombre e icono */
+}
+
+/* Nombre de usuario */
+.user-name {
+  font-weight: 600;
+  color: #e4e7f3;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  user-select: none;
+}
+
+/* Icono de usuario */
+.user-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #b7bee2;
+  background-color: #f4f6fb;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.user-icon:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 6px rgba(255,255,255,0.4);
+}
