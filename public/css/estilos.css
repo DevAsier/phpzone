@@ -1,0 +1,308 @@
+/* ===========================================================
+   ESTILOS PRINCIPALES - PHPZone (Versión Final Azul PHP Limpia)
+   =========================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
+
+:root {
+  --php-blue: #4F5B93;
+  --php-blue-light: #5E6AB0;
+  --bg-light: #f2f4f8;
+  --bg-white: #fff;
+  --gray-border: #d1d6e0;
+  --red: #b62828;
+}
+
+/* === GLOBAL === */
+body {
+  font-family: 'Nunito Sans', Arial, sans-serif;
+  background: var(--bg-light);
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* === CONTENEDORES === */
+.login-container, .dashboard {
+  width: 85%;
+  max-width: 950px;
+  margin: 60px auto;
+  background: var(--bg-white);
+  border-radius: 14px;
+  padding: 60px 70px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e1e4eb;
+  text-align: center;
+}
+
+/* === TITULOS === */
+h2, h3 {
+  color: var(--php-blue);
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+.dashboard h3 {
+  border-bottom: 2px solid #e3e5ed;
+  padding-bottom: 8px;
+  margin-bottom: 25px;
+}
+
+/* === INPUTS === */
+input[type="text"], input[type="password"], input[type="file"] {
+  width: 92%;
+  padding: 10px;
+  margin: 12px 0;
+  border-radius: 6px;
+  border: 1px solid #cbd2e0;
+  background-color: #f8f9fc;
+  font-size: 15px;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+input:focus {
+  outline: none;
+  border-color: var(--php-blue);
+  background: #fff;
+  box-shadow: 0 0 4px rgba(79, 91, 147, 0.4);
+}
+form { margin-bottom: 25px; }
+
+/* === BOTONES === */
+button {
+  background: var(--php-blue);
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+button:hover {
+  background: var(--php-blue-light);
+  transform: translateY(-1px);
+}
+.delete-all {
+  background: var(--red);
+  margin-top: 25px;
+}
+.delete-all:hover { background: #cc3434; }
+
+/* === LINKS === */
+a {
+  color: var(--php-blue);
+  text-decoration: none;
+  transition: 0.2s;
+}
+a:hover { text-decoration: underline; }
+
+/* === ICONOS === */
+.fa {
+  font-size: 18px;
+  vertical-align: middle;
+  transition: transform 0.2s ease, opacity 0.2s;
+}
+.fa-download { color: var(--php-blue-light); }
+.fa-trash { color: #d9534f; }
+.fa:hover { transform: scale(1.1); opacity: 0.9; }
+
+/* === TABLA === */
+.file-table {
+  width: 100%;
+  margin: 25px auto;
+  border-collapse: collapse;
+  background: var(--bg-white);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  font-size: 14px;
+}
+
+.file-table thead {
+  background: var(--php-blue);
+  color: #fff;
+}
+.file-table th, .file-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #e0e3eb;
+  text-align: center;
+}
+.file-table th {
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 600;
+}
+.file-table tbody tr:nth-child(even) { background: #f8f9fc; }
+.file-table tbody tr:hover { background: #eef1f9; }
+
+/* === Acciones === */
+.file-table td.acciones a {
+  display: inline-block;
+  margin: 0 8px;
+}
+.file-table td.acciones .fa-download:hover { color: #3d4b8c; }
+.file-table td.acciones .fa-trash:hover { color: #b22f2f; }
+
+/* === Barra de progreso === */
+.progress-container {
+  width: 90%;
+  margin: 15px auto 5px;
+  height: 16px;
+  background: #e9ecf5;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background: var(--php-blue);
+  border-radius: 8px;
+  transition: width 0.3s ease-in-out;
+}
+.progress-text {
+  position: absolute;
+  top: -25px;
+  right: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--php-blue);
+}
+
+/* === MODAL === */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.modal.show { display: flex; animation: fadeIn 0.25s ease-in-out; }
+.modal-content {
+  background: #fff;
+  padding: 35px 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.25);
+  text-align: center;
+  width: 420px;
+  max-width: 90%;
+}
+.cerrar-modal {
+  position: absolute;
+  right: 15px;
+  top: 12px;
+  font-size: 20px;
+  color: #666;
+  cursor: pointer;
+}
+.cerrar-modal:hover { color: var(--php-blue); }
+
+/* === FOOTER === */
+footer {
+  text-align: center;
+  color: var(--php-blue);
+  font-weight: 500;
+  font-size: 14px;
+  padding: 15px 0;
+  margin-top: 40px;
+  border-top: 1px solid var(--gray-border);
+  background: #f7f8fb;
+}
+
+/* === SCROLLBAR === */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-thumb {
+  background: var(--php-blue);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--php-blue-light); }
+
+/* === DRAG & DROP === */
+.drop-zone {
+  border: 2px dashed var(--php-blue-light);
+  border-radius: 10px;
+  padding: 40px 20px;
+  text-align: center;
+  color: #444;
+  background: #fdfdff;
+  transition: background 0.3s, border-color 0.3s;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.drop-zone:hover,
+.drop-zone.dragover {
+  background: #f2f4fc;
+  border-color: var(--php-blue);
+}
+.drop-zone i {
+  font-size: 42px;
+  color: var(--php-blue);
+  margin-bottom: 10px;
+}
+.drop-zone p {
+  font-size: 15px;
+  color: #555;
+}
+.file-preview {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #444;
+}
+.preview-img {
+  max-width: 100px;
+  margin-top: 10px;
+  border-radius: 6px;
+}
+
+/* === PAGINACIÓN === */
+.paginacion {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 25px auto 10px;
+  flex-wrap: wrap;
+}
+.paginacion button {
+  background: var(--php-blue);
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.paginacion button:hover {
+  background: var(--php-blue-light);
+  transform: translateY(-2px);
+}
+.paginacion button.activo {
+  background: var(--php-blue-light);
+  font-weight: 700;
+  transform: scale(1.05);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .login-container, .dashboard { width: 95%; padding: 30px; }
+  .file-table thead { display: none; }
+  .file-table, .file-table tbody, .file-table tr, .file-table td {
+    display: block; width: 100%;
+  }
+  .file-table tr {
+    margin-bottom: 15px;
+    border: 1px solid var(--gray-border);
+    border-radius: 8px;
+  }
+  .file-table td {
+    display: flex; justify-content: space-between; padding: 10px 15px;
+  }
+  .file-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--php-blue);
+  }
+}
+
+/* === ANIMACIONES === */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }

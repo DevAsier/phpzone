@@ -1,0 +1,99 @@
+/* === Header general === */
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4F5B93;
+  color: #fff;
+  padding: 15px 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Sombra al hacer scroll */
+.main-header.scroll {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* === Logo === */
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo {
+  width: 40px;
+  height: 40px;
+}
+.brand-name {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #fff;
+  margin: 0;
+}
+
+/* === Menú de usuario === */
+.user-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #b7bee2;
+  transition: transform 0.2s;
+}
+.user-icon:hover {
+  transform: scale(1.05);
+}
+
+/* === Dropdown === */
+.dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  background: #fff;
+  color: #333;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  width: 160px;
+  text-align: left;
+  overflow: hidden;
+  z-index: 10;
+}
+.dropdown.show {
+  display: block;
+  animation: fadeIn 0.25s ease-in-out;
+}
+.dropdown p {
+  margin: 12px;
+  font-weight: 600;
+  color: #4F5B93;
+}
+.dropdown a {
+  display: block;
+  padding: 10px 12px;
+  color: #4F5B93;
+  text-decoration: none;
+  border-top: 1px solid #eee;
+  transition: background 0.2s;
+}
+.dropdown a:hover {
+  background-color: #f0f2fa;
+}
+
+/* === Animación === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
